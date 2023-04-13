@@ -1,0 +1,23 @@
+import bonos.*
+import pepe.*
+import categorias.*
+
+describe "Test pepe"{
+	method initialize(){
+		pepe.setFaltas(3)
+		pepe.setCategoria(cadete)
+		pepe.setBonoPresentismo()
+		pepe.setBonoResultado(bonoFijo)
+	}
+	
+	test "Pepe cadete bono fijo 3 faltas"{
+		assert.equals(15080,pepe.sueldo())
+	}
+	
+	test "Pepe gerente porcentaje "{
+		pepe.setCategoria(gerente)
+		pepe.setBonoResultado(bonoPorcentaje)
+		pepe.setBonoPresentismo()
+		assert.equals(11000,pepe.sueldo())
+	}
+}
